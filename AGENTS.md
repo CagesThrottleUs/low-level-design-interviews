@@ -269,7 +269,7 @@ Deliver a structured learning session:
 ## Quick Command Reference
 
 | What you want | Say to agent |
-|---|---|
+| --- | --- |
 | Start mock interview | `"Interview me on parking lot"` |
 | Score my design | `"Evaluate my attempt on parking lot"` |
 | See reference solution | `"Show me the LRU cache solution"` |
@@ -286,7 +286,7 @@ Deliver a structured learning session:
 ## File Role Summary
 
 | File | Written by | Read by |
-|---|---|---|
+| --- | --- | --- |
 | `PROBLEM.md` | Harness (pre-written) | Candidate + AI Interviewer |
 | `MOCK_INTERVIEW.md` | Harness (pre-written) | AI Interviewer only |
 | `PROPOSED_SOLUTION.md` | AI Interviewer (during session) | AI Evaluator, Candidate |

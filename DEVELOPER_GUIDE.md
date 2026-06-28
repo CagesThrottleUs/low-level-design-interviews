@@ -366,7 +366,7 @@ You don't encounter patterns labeled "this is a Strategy." You encounter code an
 ### Reading JDK code
 
 | You see | Pattern |
-|---------|---------|
+| --- | --- |
 | `Comparator` | Strategy |
 | `Runnable`, `Callable` | Command |
 | `Iterator` | Iterator |
@@ -379,7 +379,7 @@ You don't encounter patterns labeled "this is a Strategy." You encounter code an
 ### Reading Spring code
 
 | You see | Pattern |
-|---------|---------|
+| --- | --- |
 | `@Transactional` | Proxy (AOP proxy wraps service) |
 | `@Cacheable` | Proxy (caching proxy) |
 | `ApplicationEvent` + `@EventListener` | Observer |
@@ -395,7 +395,7 @@ You don't encounter patterns labeled "this is a Strategy." You encounter code an
 Patterns are tools. Using a tool where it doesn't fit is over-engineering.
 
 | Don't use | When |
-|-----------|------|
+| --- | --- |
 | Strategy | There's only one algorithm (YAGNI) |
 | Observer | There's only one listener and it never changes |
 | State | There are only 2 states (use a boolean) |
@@ -488,7 +488,7 @@ Awareness → Application → Internalization → Intuition
 ```
 
 | Stage | What it looks like |
-|-------|-------------------|
+| --- | --- |
 | **Awareness** | You recognise pattern names when someone tells you |
 | **Application** | You can apply a pattern when told which one to use |
 | **Internalization** | You identify which pattern applies without being told |
