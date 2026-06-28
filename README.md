@@ -51,11 +51,11 @@ progress/
 | 03 | LRU Cache | Foundation | — | DS + eviction + thread safety |
 | 04 | Elevator System | Foundation | State, Strategy | Scheduling algorithm, FSM |
 | 05 | Splitwise | Intermediate | Strategy, Observer | Expense splitting math, group management |
-| 06 | Movie Ticket Booking | Intermediate | State, Strategy | Seat selection, concurrent booking |
-| 07 | Notification System | Intermediate | Observer, Strategy | Multi-channel, retry logic |
-| 08 | Rate Limiter | Intermediate | Strategy | Token bucket vs sliding window |
-| 09 | Chess Game | Advanced | Command, State | Move validation, turn management |
-| 10 | Ride Share (Uber) | Advanced | Observer, Strategy | Driver matching, ride lifecycle |
+| 06 | ATM System | Foundation-Intermediate | State, Strategy | Atomic withdrawal, PIN lockout |
+| 07 | Movie Ticket Booking | Intermediate | State, Strategy | Concurrent seat hold, payment flow |
+| 08 | Notification System | Intermediate | Strategy, Decorator | Multi-channel, retry, user preferences |
+| 09 | Rate Limiter | Intermediate | Strategy | Token bucket, lazy refill, CAS |
+| 10 | Chess Game | Advanced | Command, Polymorphism | Move undo, check detection, piece hierarchy |
 
 See [problems/](problems/) for full problem list.
 
