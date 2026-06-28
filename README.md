@@ -56,6 +56,51 @@ progress/
 | 08 | Notification System | Intermediate | Strategy, Decorator | Multi-channel, retry, user preferences |
 | 09 | Rate Limiter | Intermediate | Strategy | Token bucket, lazy refill, CAS |
 | 10 | Chess Game | Advanced | Command, Polymorphism | Move undo, check detection, piece hierarchy |
+| 11 | Pizza Ordering | Foundation | **Builder** | Telescoping constructor, immutable product, Director |
+| 12 | In-Memory File System | Intermediate | **Composite** | Uniform size() on leaf+composite, Map children, parent ref |
+| 13 | Logging Framework | Intermediate | **Chain of Responsibility**, Strategy | Per-appender threshold, formatter independence, flush |
+| 14 | Chat Room | Intermediate | **Mediator** | Zero user-to-user refs, CopyOnWriteArrayList, DIP |
+| 15 | Caching Proxy | Intermediate | **Proxy** | TTL CacheEntry, thundering herd, virtual proxy volatile |
+| 16 | Data Exporter | Foundation | **Template Method** | final skeleton, abstract class not interface, hooks |
+| 17 | Bounded Blocking Queue | Advanced | Producer-Consumer | Two Conditions, while loop, signal direction, finally |
+| 18 | Custom Thread Pool | Advanced | Thread Pool, State Machine | volatile state, poll(timeout), worker survives exceptions |
+
+See [problems/](problems/) for full problem list.
+
+## Pattern Coverage
+
+All GoF patterns relevant to LLD interviews are covered:
+
+| Category | Pattern | Problem(s) |
+| --- | --- | --- |
+| **Creational** | Builder | 11 Pizza Ordering |
+| | Factory Method | 01 Parking Lot |
+| | Singleton | embedded in multiple |
+| **Structural** | Composite | 12 File System |
+| | Decorator | 08 Notification System |
+| | Proxy | 15 Caching Proxy |
+| **Behavioral** | Chain of Responsibility | 13 Logging Framework |
+| | Command | 10 Chess Game |
+| | Mediator | 14 Chat Room |
+| | Observer | 05 Splitwise, 08 Notification |
+| | State | 02 Vending Machine, 04 Elevator, 06 ATM, 07 Movie Booking |
+| | Strategy | 01, 05, 07, 08, 09, 13 |
+| | Template Method | 16 Data Exporter |
+
+## Concurrency Coverage
+
+| Concept | Problem(s) |
+| --- | --- |
+| `synchronized` per-object | 01 Parking Lot, 07 Movie Booking |
+| `ReentrantReadWriteLock` | 03 LRU Cache, 12 File System |
+| `AtomicLong` / CAS | 09 Rate Limiter |
+| `ConcurrentHashMap` | multiple |
+| `ReentrantLock` + two `Condition` variables | **17 Blocking Queue** |
+| `volatile` + double-checked locking | 15 Proxy, 18 Thread Pool |
+| `CopyOnWriteArrayList` | 13 Logging, 14 Chat Room |
+| `BlockingQueue` + worker lifecycle | **18 Thread Pool** |
+| Per-resource locking (fine-grained) | 01 Parking Lot, 07 Movie Booking |
+| Thundering herd (`FutureTask` + `putIfAbsent`) | 15 Caching Proxy |
 
 See [problems/](problems/) for full problem list.
 
